@@ -19,7 +19,7 @@ public class LoginBO {
 
     public void login(String email, String password) {
         if (!driver.getCurrentUrl().contains("login")) {
-            driver.get("https://cpadonor.com/en/login");
+            driver.get("https://cpadonor.com/login");
         }
 
         loginPage.inputEmail(email);

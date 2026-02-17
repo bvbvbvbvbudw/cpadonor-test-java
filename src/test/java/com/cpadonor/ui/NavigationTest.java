@@ -9,7 +9,7 @@ public class NavigationTest extends BaseTest {
     public void checkMenuLinks() {
         LoginBO loginBO = new LoginBO(driver);
 
-        loginBO.login("test_user@gmail.com", "jdskladJASKLDJA");
+        loginBO.login("batmansila1234@gmail.com", "batmansila1234");
 
         DashboardBO dashboardBO = new DashboardBO(driver);
         dashboardBO.checkAllMenuLinks();

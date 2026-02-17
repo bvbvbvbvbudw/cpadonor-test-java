@@ -59,7 +59,7 @@ public class FlowWizardPage {
 
     public void fillStep3() throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOf(domainSelectWrapper));
-        selectOptionInChoices(domainSelectWrapper, "vertanet.fun");
+        selectOptionInChoices(domainSelectWrapper, "cpadonor.online");
         if (postbackCheckbox.isSelected()) {
             postbackCheckbox.click();
             System.out.println("LOG: Postback checkbox was checked, clicked to disable.");

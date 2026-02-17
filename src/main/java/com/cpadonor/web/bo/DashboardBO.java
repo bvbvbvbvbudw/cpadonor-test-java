@@ -19,9 +19,9 @@ public class DashboardBO {
     }
 
     public void checkAllMenuLinks() {
-        checkPage(dashPage::goOffers, "offers");
+        checkPage(dashPage::goOffers, "test");
         checkPage(dashPage::goFlows, "flows");
-        // checkPage(dashPage::goDomains, "domains"); this page in coming soon
+        checkPage(dashPage::goDomains, "domains");
         checkPage(dashPage::goSources, "sources");
         checkPage(dashPage::goLeads, "leads");
         checkPage(dashPage::goBumps, "bumps");

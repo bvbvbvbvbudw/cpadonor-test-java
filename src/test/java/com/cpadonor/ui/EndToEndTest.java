@@ -13,7 +13,7 @@ public class EndToEndTest extends BaseTest {
         FlowBO flowBO = new FlowBO(driver);
 
         String mySource = "google.com";
-        String targetOffer = "Dating Survey - WW";
+        String targetOffer = "Motion Energy (PE)";
 
         flowBO.ensureSourceExists(mySource, "https://google.com");
 

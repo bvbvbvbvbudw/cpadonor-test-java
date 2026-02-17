@@ -53,6 +53,9 @@ public class DashboardPage {
     @FindBy(css = "a[href*='profile']")
     private WebElement linkProfile;
 
+    @FindBy(css = "a[href*='domains']")
+    private WebElement linkDomains;
+
     @FindBy(css = "a[href*='referrals']")
     private WebElement linkReferrals;
 
@@ -62,6 +65,7 @@ public class DashboardPage {
     public void goHome() { linkHome.click(); }
     public void goOffers() { linkOffers.click(); }
     public void goFlows() { linkFlows.click(); }
+    public void goDomains() { linkDomains.click(); }
     public void goSources() { linkSources.click(); }
     public void goLeads() { linkLeads.click(); }
     public void goBumps() { linkBumps.click(); }

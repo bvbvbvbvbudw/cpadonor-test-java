@@ -1,10 +1,12 @@
 package com.cpadonor.ui;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import com.cpadonor.config.TestConfig;
 import com.cpadonor.web.LoginSteps;
 import org.example.TestListener;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -20,14 +22,21 @@ public class BaseTest {
     public WebDriver driver;
     public WebDriverWait wait;
 
-    protected final String BASE_URL = "https://cpadonor.com/en";
-    protected final String USER_EMAIL = "test_user@gmail.com";
-    protected final String USER_PASS = "jdskladJASKLDJA";
+    protected final String BASE_URL = TestConfig.baseUrl();
+    protected final String USER_EMAIL = TestConfig.userEmail();
+    protected final String USER_PASS = TestConfig.userPass();
 
     @BeforeClass
     public void setup() {
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        if (TestConfig.isCi()) {
+            options.addArguments("--headless=new");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--window-size=1920,1080");
+        }
+        driver = new ChromeDriver(options);
         driver.manage().window().maximize();
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));

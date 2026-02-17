@@ -9,8 +9,8 @@ import java.util.UUID;
 
 public class ApiTest {
 
-    private final String VALID_FLOW_HASH = "yl1z36f4Tnss";
-    private final Integer VALID_FLOW_ID = 1282;
+    private final String VALID_FLOW_HASH = "d7VnVjPMavuP";
+    private final Integer VALID_FLOW_ID = 1321;
 
     @Test(description = "Full cycle: Click -> Wait -> Lead")
     public void checkRegistration() throws InterruptedException {

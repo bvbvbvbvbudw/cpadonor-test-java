@@ -1,5 +1,6 @@
 package com.cpadonor.api;
 
+import com.cpadonor.config.AppConfig;
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -9,7 +10,7 @@ import com.cpadonor.api.dto.LeadDto;
 
 public class ApiService {
 
-    private final String BASE_API_URL = "https://api.cpadonor.com/api";
+    private final String BASE_API_URL = AppConfig.apiBaseUrl();
 
     public Response registerClick(ClickDto click) {
         return RestAssured.given()
@@ -30,6 +31,7 @@ public class ApiService {
     public Response getFlowData(String hash) {
         return RestAssured.given()
                 .filter(new AllureRestAssured())
+                .header("X-Flow-Domain", "cpadonor.online")
                 .get(BASE_API_URL + "/flow-data/" + hash);
     }
 }
